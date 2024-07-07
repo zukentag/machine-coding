@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Assingment Round 1</title>
+  </head>
+  <body>
+    <h1>Logs</h1>
+    <div id="log-container"></div>
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    let socket = io("ws://localhost:3000");
+
+    socket.on("init", (logData) => {
+      console.log("Data received from server :  ", logData);
+
+      for (log of logData) {
+        document.getElementById("log-container").innerHTML +=
+          "<p>" + log + "<p>";
+      }
+    });
+    socket.on("update-logs", (logData) => {
+      console.log("Updated logs data received from server :  ", logData);
+
+      for (log of logData) {
+        document.getElementById("log-container").innerHTML +=
+          "<p>" + log + "<p>";
+      }
+    });
+  </script>
+</html>
