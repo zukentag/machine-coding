@@ -1,0 +1,11 @@
+ 
+Task is to create these 3 apis and should work via any browser UI.
+
+1. clear cache and history of the given browser.
+ex -> /clear?app=firefox
+
+2. to open a given URL in the given browser.
+ex -> /open?app=firefox&url=https://www.google.com
+
+3. to close the browser.
+ex -> /close?app=chrome
